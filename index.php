@@ -7,10 +7,10 @@ catch ( PDOException $e ) {
    print( "Error connecting to SQL Server." );
    die(print_r($e));
 }
-
+echo "Je suis la"
 $reponse = $bdd->query('SELECT * FROM Jeux');
 var_dump($reponse);
-
+echo "Et la aussi"
 while ($donnees = $reponse->fetch())
 {
 ?>
