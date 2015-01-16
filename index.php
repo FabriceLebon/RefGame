@@ -1,3 +1,8 @@
+<html>
+<head>
+  <title>Gestion Jeux</title>
+</head>
+<body>
 <?php
 try {
   $conn = new PDO ( "sqlsrv:server = tcp:h8lwqxb5tn.database.windows.net,1433; Database = Game", "game_read", "ReaAzu13");
@@ -22,3 +27,6 @@ while ($donnees = $reponse->fetch())
 }
 $reponse->closeCursor(); // Termine le traitement de la requête
 ?>
+
+</body>
+</html>
