@@ -9,6 +9,7 @@ catch ( PDOException $e ) {
 }
 
 $reponse = $bdd->query('SELECT * FROM Jeux');
+var_dump($reponse);
 
 while ($donnees = $reponse->fetch())
 {
