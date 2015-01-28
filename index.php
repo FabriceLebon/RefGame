@@ -4,7 +4,8 @@
 </head>
 <body>
 <?php
-try {
+echo "Je suis la";
+/*try {
   $conn = new PDO ( "sqlsrv:server = tcp:h8lwqxb5tn.database.windows.net,1433; Database = Game", "game_read", "ReaAzu13");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 }
@@ -25,7 +26,7 @@ while ($donnees = $reponse->fetch())
    </p>
 <?php
 }
-$reponse->closeCursor(); // Termine le traitement de la requête
+$reponse->closeCursor(); // Termine le traitement de la requête*/
 ?>
 
 </body>
