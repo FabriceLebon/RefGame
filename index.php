@@ -4,7 +4,7 @@
 </head>
 <body>
 <?php
-echo "Tentative de connexion";
+echo "<br>Tentative de connexion<br>";
 try{
   $conn = new PDO( "sqlsrv:Server = tcp:h8lwqxb5tn.database.windows.net,1433; Database = Game", "game_read@h8lwqxb5tn", "ReaAzu13");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
@@ -13,10 +13,11 @@ catch ( PDOException $e ) {
    print( "Error connecting to SQL Server." );
    die(print_r($e));
 }
-echo "Connexion reussie";/*
-$reponse = $bdd->query('SELECT * FROM Jeux');
+echo "<br>Connexion reussie<br>";
+$sql = "SELECT * FROM Jeux";
+$reponse = $conn->query($sql);
 var_dump($reponse);
-echo "Et la aussi"
+echo "<br>Resultat requete stockée<br>";/*
 while ($donnees = $reponse->fetch())
 {
 ?>
@@ -25,8 +26,9 @@ while ($donnees = $reponse->fetch())
     L'année de ce jeu est : <?php echo $donnees['YearGame']; ?>, et le PEGI est  <?php echo $donnees['PEGI']; ?> <br />
    </p>
 <?php
-}
-$reponse->closeCursor(); // Termine le traitement de la requête*/
+}*/
+echo "<br>Resultat requete affichee<br>";
+$reponse->closeCursor(); // Termine le traitement de la requête
 ?>
 
 </body>
