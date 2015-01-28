@@ -17,7 +17,7 @@ echo "<br>Connexion reussie<br>";
 $sql = "SELECT * FROM Jeux";
 $reponse = $conn->query($sql);
 var_dump($reponse);
-echo "<br>Resultat requete stockée<br>";/*
+echo "<br>Resultat requete stockee<br>";
 while ($donnees = $reponse->fetch())
 {
 ?>
@@ -26,7 +26,7 @@ while ($donnees = $reponse->fetch())
     L'année de ce jeu est : <?php echo $donnees['YearGame']; ?>, et le PEGI est  <?php echo $donnees['PEGI']; ?> <br />
    </p>
 <?php
-}*/
+}
 echo "<br>Resultat requete affichee<br>";
 $reponse->closeCursor(); // Termine le traitement de la requête
 ?>
