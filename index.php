@@ -5,8 +5,8 @@
 <body>
 <?php
 echo "Tentative de connexion";
-try {
-  $conn = new PDO ( "sqlsrv:server = tcp:h8lwqxb5tn.database.windows.net,1433; Database = Game", "game_read", "ReaAzu13");
+try{
+  $conn = new PDO( "sqlsrv:Server = tcp:h8lwqxb5tn.database.windows.net,1433; Database = Game", "game_read@h8lwqxb5tn", "ReaAzu13");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 }
 catch ( PDOException $e ) {
