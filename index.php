@@ -4,8 +4,8 @@
 </head>
 <body>
 <?php
-echo "Je suis la";
-/*try {
+echo "Tentative de connexion";
+try {
   $conn = new PDO ( "sqlsrv:server = tcp:h8lwqxb5tn.database.windows.net,1433; Database = Game", "game_read", "ReaAzu13");
   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 }
@@ -13,7 +13,7 @@ catch ( PDOException $e ) {
    print( "Error connecting to SQL Server." );
    die(print_r($e));
 }
-echo "Je suis la"
+echo "Connexion reussie";/*
 $reponse = $bdd->query('SELECT * FROM Jeux');
 var_dump($reponse);
 echo "Et la aussi"
