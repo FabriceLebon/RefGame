@@ -3,6 +3,7 @@
   <title>Gestion Jeux</title>
 </head>
 <body>
+
 <?php
 echo "<br>Tentative de connexion<br>";
 try{
@@ -13,6 +14,7 @@ catch ( PDOException $e ) {
    print( "Error connecting to SQL Server." );
    die(print_r($e));
 }
+
 echo "<br>Connexion reussie<br>";
 $sql = "SELECT * FROM Jeux";
 $reponse = $conn->query($sql);
