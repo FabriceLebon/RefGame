@@ -12,7 +12,7 @@ function connect()
         $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     }
     catch(PDOException $e){
-        print( "Error connecting to SQL Server." );
+        print( "Error connecting to SQL Server. <br />" );
         die(print_r($e));
     }
     return $conn;
@@ -22,6 +22,14 @@ function listeTousLesJeux($conn)
 {
 //    $conn = connect();
     $sql = "SELECT NameGame, YearGame, PEGI FROM Jeux ORDER BY NameGame";
+    $stmt = $conn->query($sql);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function listeUtilisateurs($conn)
+{
+    $sql = "SELECT ID_Utilisateur AS id, NomUtilisateur AS nom";
+    $sql .= " FROM dbo.Ref_Utilisateurs";
     $stmt = $conn->query($sql);
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
