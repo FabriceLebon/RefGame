@@ -8,7 +8,7 @@ class Utilisateur
     public function __construct()
     {
         $this->_id = 1;
-        $this->_nom = "Fabrice";
+        $this->_nom = "Belbaf";
     }
 
     // Getters

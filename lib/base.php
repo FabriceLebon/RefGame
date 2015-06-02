@@ -34,4 +34,21 @@ function listeUtilisateurs($conn)
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function controleUtilisateur($conn, $login, $mdp)
+{
+    $query = $conn->prepare('
+        SELECT ID_Utilisateur FROM Ref_Utilisateurs WHERE NonUtilisateur = :login
+    ');
+    $query->execute(array(
+        'login' => $login
+    ));
+    $count = $query->rowCount();
+    if ($count != 0)
+        $data = $query->fetchAll();
+    else    
+        $data = -1;
+    $query->closeCursor();
+    return $data;   
+}
+
 ?>
