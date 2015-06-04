@@ -9,13 +9,13 @@ function connect()
 
     try{
         $conn = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
-        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+        //$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+        return $conn;
     }
     catch(PDOException $e){
         print( "Error connecting to SQL Server. <br />" );
         die(print_r($e));
-    }
-    return $conn;
+    }   
 }
 
 function listeTousLesJeux($conn)
@@ -34,21 +34,20 @@ function listeUtilisateurs($conn)
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function controleUtilisateur($conn, $login, $mdp)
+function controleUtilisateur( $conn, $login, $mdp)
 {
     $query = $conn->prepare('
-        SELECT ID_Utilisateur FROM Ref_Utilisateurs WHERE NonUtilisateur = :login
+        SELECT TOP 1 ID_Utilisateur FROM Ref_Utilisateurs WHERE NomUtilisateur = :login
     ');
-    $query->execute(array(
+    $count = $query->execute(array(
         'login' => $login
     ));
-    $count = $query->rowCount();
-    if ($count != 0)
-        $data = $query->fetchAll();
-    else    
-        $data = -1;
+    $data = $query->fetchColumn();
     $query->closeCursor();
-    return $data;   
+    if ($data != FALSE)
+        return $data;
+    else    
+        return -1 ;
 }
 
 ?>

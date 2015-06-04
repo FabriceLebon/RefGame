@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("lib/fonctions.php");
+    include_once 'lib/fonctions.php';
     include_once 'lib/base.php';
     $conn = connect();
 ?>
@@ -12,9 +12,7 @@
 <body>
 <?php
     if (verifChampRempli($_POST['login']) and verifChampRempli($_POST['pwd'])) {
-        echo "connexion en cours de " . $_POST['login'] . " <br />";
-        $_SESSION['id'] = controleUtilisateur($conn, $_POST['login'], $_POST['pwd'] );
-        echo "sessions : " . $_SESSION['id'] ." <br/>";
+        $_SESSION['id'] = controleUtilisateur( $conn, $_POST['login'], $_POST['pwd'] );
     }
 
     if (!user_verified()) {
@@ -29,8 +27,6 @@
         </div>
 <?php
     } else {
-
-        include_once 'lib/base.php';
         include_once 'lib/utilisateur.php';
 
         include("src/menu.php");

@@ -1,6 +1,8 @@
 <?php
 function user_verified() {
-        return isset($_SESSION['id']);
+    if( isset($_SESSION['id']) && ($_SESSION['id'] > 0)) {
+        return TRUE;
+    } else return FALSE;
 }
 
 function verifChampRempli($champ) {
@@ -10,4 +12,5 @@ function verifChampRempli($champ) {
         return 0;
     }
 }
+
 ?>
