@@ -1,13 +1,13 @@
 <?php
     session_start();
-    include_once 'lib/fonctions.php';
-    include_once 'lib/base.php';
+    include_once '/lib/fonctions.php';
+    include_once '/lib/base.php';
     $conn = connect();
 ?>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Gestion Jeux</title>
+    <title>Gestion Jeux - home</title>
 </head>
 <body>
 <?php
@@ -27,9 +27,9 @@
         </div>
 <?php
     } else {
-        include_once 'lib/utilisateur.php';
+        include_once '/lib/utilisateur.php';
 
-        include("src/menu.php");
+        include_once '/src/menu.php';
 
         $jeux = listeTousLesjeux($conn);
 
@@ -59,7 +59,6 @@
         $user = new Utilisateur();
         echo $user->getId() . "<br>";
         echo $user->getNom() . "<br>";
-        session_destroy();
     }
 ?>
 

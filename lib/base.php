@@ -49,5 +49,3 @@ function controleUtilisateur( $conn, $login, $mdp)
     else    
         return -1 ;
 }
-
-?>
