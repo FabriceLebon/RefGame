@@ -25,7 +25,7 @@
   
   $user = $_POST['user'];
   $pwd = sha1($_POST['pwd']);
-  $db = db_connect();
+  $db = connect();
   $etat = modifierPwd($db, $user, $pwd);
   var_dump($user);
   echo "<br />";
