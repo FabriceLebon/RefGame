@@ -14,18 +14,19 @@
     <form action="/index.php" method="post">
     Veuillez saisir votre login et mot de passe :<br/>
     <input type="text" name="login" placeholder="Pseudo:" /><br />
-    <input type="text" name="pwd" placeholder="mot de passe:" /><br/>
+    <input type="password" name="pwd" placeholder="mot de passe:" /><br/>
     <input type="submit" value="Go" />
     </form>
   </div>
 <?php 
   } else {
   include_once 'Menu.php';
+  include_once '../lib/ModelAdmin.php';
   include_once '../lib/base.php';
   
   $user = $_POST['user'];
   $pwd = sha1($_POST['pwd']);
-  $db = connect();
+  $db = connectAdmin();
   $etat = modifierPwd($db, $user, $pwd);
   var_dump($user);
   echo "<br />";

@@ -37,10 +37,11 @@ function listeUtilisateurs($conn)
 function controleUtilisateur( $conn, $login, $mdp)
 {
     $query = $conn->prepare('
-        SELECT TOP 1 ID_Utilisateur FROM Ref_Utilisateurs WHERE NomUtilisateur = :login
+        SELECT TOP 1 ID_Utilisateur FROM Ref_Utilisateurs WHERE NomUtilisateur = :login and Pwd = :pwd
     ');
     $count = $query->execute(array(
-        'login' => $login
+        'login' => $login,
+        'pwd' => sha1($mdp)
     ));
     $data = $query->fetchColumn();
     $query->closeCursor();

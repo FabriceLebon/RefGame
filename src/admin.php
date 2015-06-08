@@ -14,7 +14,7 @@
     <form action="/index.php" method="post">
     Veuillez saisir votre login et mot de passe :<br/>
     <input type="text" name="login" placeholder="Pseudo:" /><br />
-    <input type="text" name="pwd" placeholder="mot de passe:" /><br/>
+    <input type="password" name="pwd" placeholder="mot de passe:" /><br/>
     <input type="submit" value="Go" />
     </form>
   </div>
