@@ -21,6 +21,16 @@
 <?php 
   } else {
   include_once 'Menu.php';
+ ?>
+  <div id="ModifPwd">
+    <form action="/src/modif_pwd.php" method="post">
+        Entrer le user a modifier et son mot de passe: 
+        <input type="text" name="user"><br />
+        <input type="text" name="pwd"><br />
+        <input type="submit" value="modifier">
+    </form>
+  </div>
+ <?php 
 }
 ?>
 </body>
