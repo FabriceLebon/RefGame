@@ -21,7 +21,7 @@
 <?php 
   } else {
   include_once 'Menu.php';
-  include_once 'base.php';
+  include_once '../lib/base.php';
   
   $user = $_POST['user'];
   $pwd = sha1($_POST['pwd']);
