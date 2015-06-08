@@ -49,3 +49,20 @@ function controleUtilisateur( $conn, $login, $mdp)
     else    
         return -1 ;
 }
+
+function modifierPwd($db, $user, $pwd) {
+    $query = $db->prepare('
+        UPDATE Ref_Utilisateurs SET Pwd = :pwd WHERE NomUtilisateur = :user
+    ');
+    $query->execute(array(
+        'pwd' => $pwd,
+        'user' => $user
+    ));
+    $count = $query->rowCount();
+    if ($count != 0)
+        $data = $count;
+    else    
+        $data = -1;
+    $query->closeCursor();
+    return $data;
+}
