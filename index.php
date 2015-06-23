@@ -44,15 +44,23 @@
     } else {
         include_once '/src/menu.php';
 
-        $jeux = listeTousLesjeux($conn);
-
+        $jeux = listeJeuxAjoutes($conn);
+        echo "<h3>Les 5 derniers jeux ajoutés</h3><p>";
         foreach ($jeux as $jeu)
         {
-            echo "<p>
-            <strong>Jeu</strong> : ".$jeu['NameGame']."<br />
-            L'année de ce jeu est : ".$jeu['YearGame'].", et le PEGI est  ".$jeu['PEGI']." <br />
-           </p>";
+            echo "- <strong>" . $jeu['NameGame'] . "</strong> (" . $jeu['YearGame'] 
+            . "), le PEGI est  " . $jeu['PEGI'] . " <br />";
         }
+        echo "</p><p>";
+
+        $jeux = listeJeuxModifies($conn);
+        echo "<h3>Les 5 derniers jeux modifiés</h3><p>";
+        foreach ($jeux as $jeu)
+        {
+            echo "- <strong>" . $jeu['NameGame'] . "</strong> (" . $jeu['YearGame'] 
+            . "), le PEGI est  " . $jeu['PEGI'] . " <br />";
+        }
+        echo "</p>";
 
         $utilisateurs = listeUtilisateurs($conn);
         echo '<select name="user">',"\n";

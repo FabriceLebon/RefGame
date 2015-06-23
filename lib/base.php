@@ -26,6 +26,22 @@ function listeTousLesJeux($conn)
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function listeJeuxModifies($conn)
+{
+//    $conn = connect();
+    $sql = "SELECT TOP 5 NameGame, YearGame, PEGI FROM Jeux ORDER BY DateModif DESC";
+    $stmt = $conn->query($sql);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function listeJeuxAjoutes($conn)
+{
+//    $conn = connect();
+    $sql = "SELECT TOP 5 NameGame, YearGame, PEGI FROM Jeux ORDER BY DateCreation DESC";
+    $stmt = $conn->query($sql);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 function listeUtilisateurs($conn)
 {
     $sql = "SELECT ID_Utilisateur AS id, NomUtilisateur AS nom";
