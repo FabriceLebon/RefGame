@@ -83,3 +83,19 @@ function modifierPwd($db, $user, $pwd) {
     $query->closeCursor();
     return $data;
 }
+
+function chercheJeux($db, $text) {
+    $query = $db->prepare('
+        SELECT * FROM v_Jeux_Simples WHERE nom LIKE :critere ORDER BY annee
+    ');
+    $query->execute(array(
+        'critere' => "%" . $text . "%"
+    ));
+    $count = $query->rowCount();
+    if ($count != 0)
+        $data = $query->fetchAll();
+    else    
+        $data = -1;
+    $query->closeCursor();
+    return $data;
+}
