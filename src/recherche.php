@@ -45,7 +45,7 @@
                     echo $jeu['id'] . ' <a href="jeu_detaillé.php?id=' . $jeu['id'] . '">' . $jeu['nom'] . '</a> ' . $jeu['annee'] . ' ' . $jeu['note_jeu'] . ' ' . $jeu['note_trophees'] . '<br />';
                 endforeach;
              } ?>
-            <a href="ajout_jeu.php">Ajouter un jeu</a><br />
+            <br/><br/><a href="ajout_jeu.php">Ajouter un jeu</a><br />
         </div>
      <?php 
     }
