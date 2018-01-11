@@ -42,7 +42,7 @@
                 //var_dump($jeux);
                 echo "<br /><br />";              
                 foreach ($jeux as $jeu):
-                    echo $jeu['id'] . ' <a href="jeu_detaillé.php?id=' . $jeu['id'] . '">' . $jeu['nom'] . '</a> ' . $jeu['annee'] . ' ' . $jeu['note_jeu'] . ' ' . $jeu['note_trophees'] . '<br />';
+                    echo ' <a href="jeu_detaillé.php?id=' . $jeu['nom'] . '">' . $jeu['nom'] . '</a> ' . $jeu['annee'] . '<br />';
                 endforeach;
              } ?>
             <br/><br/><a href="ajout_jeu.php">Ajouter un jeu</a><br />
