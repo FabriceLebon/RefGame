@@ -86,7 +86,7 @@ function modifierPwd($db, $user, $pwd) {
 
 function chercheJeux($db, $text) {
     $query = $db->prepare('
-        SELECT * FROM v_Jeux_Simples WHERE nom LIKE :critere ORDER BY annee
+        SELECT DISTINCT(nom), annee FROM v_Jeux_Simples WHERE nom LIKE :critere ORDER BY annee
     ');
     $query->execute(array(
         'critere' => "%" . $text . "%"
