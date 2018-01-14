@@ -33,13 +33,13 @@
         <div id="AjoutJeuR">
             <?php  if (verifChampRempli($_POST['nom'])) {     
                 $recherche = $_POST['nom'];
-                $url = "http://www.giantbomb.com/api/search?api_key=b6923e1c4d2e70b5b8291923aff409db9d116104&format=json&query=".$recherche."&resources=game&field_list=name";
+                $url = "http://www.giantbomb.com/api/search?api_key=b6923e1c4d2e70b5b8291923aff409db9d116104&format=json&query=".$recherche."&resources=game&field_list=id,name&limit=50";
                 $raw = file_get_contents($url);
                 $json = json_decode($raw);   
                  
                 if(!empty($json->results)) {
                     foreach($json->results as $msg) {
-                            echo "<u>" . $msg->name ."</u>";
+                            echo "<u>" . $msg->id ."</u> : " . $msg->name;
                              echo "<br />";
                     }
                 } else {
