@@ -38,7 +38,7 @@
                 $jeux = chercheJeux($db, $extrait);
                 //var_dump($extrait);
                 //var_dump($jeux);              
-                echo '<table style="text-align: left;" border="1" cellpadding="2" cellspacing="2">';
+                echo '<table style="text-align: left; margin-top: 30px;" border="1" cellpadding="2" cellspacing="2">';
                 echo '<tbody>';
                 foreach ($jeux as $jeu):
                     echo '<tr><td><a href="jeu_detaillé.php?id=' . $jeu['nom'] . '">' . $jeu['nom'] . '</a></td><td> ' . $jeu['annee'] . '</td></tr><br />';
