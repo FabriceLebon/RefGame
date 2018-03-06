@@ -40,10 +40,13 @@
                 //var_dump($extrait);
                 echo "<br />";
                 //var_dump($jeux);
-                echo "<br /><br />";              
+                echo '<br /><br />'; 
+                echo '<table style="text-align: left;" border="1" cellpadding="2" cellspacing="2">';
+                echo '<tbody>';
                 foreach ($jeux as $jeu):
-                    echo ' <a href="jeu_detaillé.php?id=' . $jeu['nom'] . '">' . $jeu['nom'] . '</a> ' . $jeu['annee'] . '<br />';
+                    echo '<tr><td><a href="jeu_detaillé.php?id=' . $jeu['nom'] . '">' . $jeu['nom'] . '</a></td><td> ' . $jeu['annee'] . '</td></tr><br />';
                 endforeach;
+                echo '</tbody></table>';
              } ?>
             <br/><br/><a href="ajout_jeu.php">Ajouter un jeu</a><br />
         </div>
