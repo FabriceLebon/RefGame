@@ -36,11 +36,8 @@
                 $extrait = $_POST['extrait'];
                 $db = connect();
                 $jeux = chercheJeux($db, $extrait);
- 
                 //var_dump($extrait);
-                echo "<br />";
-                //var_dump($jeux);
-                echo '<br /><br />'; 
+                //var_dump($jeux);              
                 echo '<table style="text-align: left;" border="1" cellpadding="2" cellspacing="2">';
                 echo '<tbody>';
                 foreach ($jeux as $jeu):
